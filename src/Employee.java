@@ -68,6 +68,14 @@ public class Employee {
         return this.salary * 0.15;
     }
 
+    public double taxAndBonusAddedSalary(){
+        return this.bonus()-this.tax()+this.salary;
+    }
+
+    public double totalSalary(){
+        return this.bonus()-this.tax()+this.salary+this.raiseSalary();
+    }
+
     public String toString(){
         return "Name:" + this.name + "\n" +
                 "Salary:" + this.salary + "\n" +
@@ -76,7 +84,7 @@ public class Employee {
                 "Tax:" + this.tax() + "\n" +
                 "Bonus:" + this.bonus() + "\n" +
                 "Raise salary:" + this.raiseSalary() + "\n" +
-                "Tax and bonus added salary:" + (this.bonus()-this.tax()+this.salary) + "\n" +
-                "Total salary:" + (this.bonus()-this.tax()+this.salary+this.raiseSalary());
+                "Tax and bonus added salary:" + taxAndBonusAddedSalary() + "\n" +
+                "Total salary:" + totalSalary();
     }
 }
